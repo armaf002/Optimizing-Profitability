@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-The objective of this report is to address the challenge of optimizing profitability in sales operations across multiple countries, with a specific focus on understanding and addressing the variations in profit margins observed in Ghana, Nigeria, Senegal, Togo, and Benin. The report encompasses data exploration, analysis, modeling, and actionable recommendations derived from the analysis.
+In the contemporary business landscape, achieving consistent and robust profitability is a paramount goal for organizations. This report addresses the challenge of optimizing profitability in sales operations across multiple countries. The specific focus is on understanding and addressing profit disparities observed in Ghana, Nigeria, Senegal, Togo, and Benin. Through comprehensive data analysis and modeling, we aim to identify key factors influencing profit disparities, develop actionable strategies, and ultimately enhance profitability across all countries.
 
 ## Problem Statement
 
@@ -10,14 +10,28 @@ The primary challenge of this project is to optimize profitability in sales oper
 
 ## Methodology
 
-### Data Exploration
+### Data Exploration and Cleaning
 
-The analysis began with a comprehensive exploration of the dataset containing sales data across multiple countries. Key steps included:
+We began by loading the dataset, which contains sales data for various countries and regions. We conducted data exploration, including examining data types, checking for missing values, and identifying duplicate entries. Missing values were minimal and were removed. Duplicate entries were dropped to ensure data integrity.
 
-- Loading and inspecting the dataset to understand its structure.
-- Cleaning the data by handling missing values and removing duplicates.
-- Visualizing data distributions and trends through histograms, bar charts, and time series analysis.
-- Performing statistical analysis to understand the central tendencies and variations in the data.
+### Data Visualization
+
+We visualized the data to gain insights into key aspects of the sales operation:
+
+- **Histograms of Numeric Columns:** We created histograms to understand the distributions of features such as plant cost, unit price, quantity, cost, and profit.
+
+- **Bar Charts for Categorical Columns:** Bar charts were used to visualize distributions of categorical variables like sales representatives, brands, countries, and regions.
+
+- **Time Series Analysis:** We analyzed monthly and yearly trends in profit using line plots.
+
+- **Scatter Plot:** A scatter plot showed the relationship between unit price and profit.
+
+### Statistical Analysis
+
+We performed statistical analyses to better understand the data:
+
+- Calculated summary statistics, including mean, median, and variance of profit.
+- Conducted ANOVA to compare profits among different countries.
 
 ### Feature Engineering
 
@@ -25,14 +39,14 @@ Feature engineering was a crucial step to create new features from the existing 
 
 - Encoding categorical variables into numerical representations.
 - Creating new features such as total cost, total revenue, and sales representative revenue.
-
+  
 ### Model Development
 
-Linear regression was chosen as the predictive model to forecast profits based on the identified factors. The model was trained and evaluated using mean squared error, root mean squared error, and R-squared (R^2) to assess its performance.
+Our predictive modelling approach involved using a Linear Regression model. We split the data into training and testing sets, allowing us to train the model on one subset and evaluate its performance on another. Model evaluation metrics included Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R^2) to assess model accuracy and explainability.
 
 ### Feature Importance
 
-Feature importance analysis identified the most influential factors affecting profit predictions. Features were ranked based on their absolute coefficient values, revealing their impact on profitability.
+To understand which factors most significantly influence profitability, we conducted feature importance analysis. This analysis ranked features by their absolute coefficient values from the linear regression model. We sought to identify critical drivers of profitability in sales operations.
 
 ## Results and Discussion
 
@@ -60,11 +74,11 @@ The analysis identified several key profit drivers:
 
 Our predictive modeling results indicated a high level of accuracy and explainability:
 
-- MSE: The Mean Squared Error was approximately 5,080,570.70, suggesting that, on average, predictions deviated from actual values by this amount.
+- **MSE**: The Mean Squared Error was approximately 5,080,570.70, suggesting that, on average, predictions deviated from actual values by this amount.
 
-- RMSE: The Root Mean Squared Error, at approximately 2,254.01, provided a more interpretable measure of error in the same units as the target variable.
+- **RMSE**: The Root Mean Squared Error, at approximately 2,254.01, provided a more interpretable measure of error in the same units as the target variable.
 
-- R-squared (R^2): The perfect R-squared score of 1.00 indicated that the model perfectly fit the data, explaining all variance.
+- **R-squared (R^2)**: The perfect R-squared score of 1.00 indicated that the model perfectly fit the data, explaining all variance.
 
 ### Feature Importance
 
